@@ -4,7 +4,7 @@ class PoemsController < ApplicationController
   # GET /poems
   # GET /poems.json
   def index
-    @poems = Poem.all
+    #@poems = Poem.all
     #render json: @poems
   end
 
