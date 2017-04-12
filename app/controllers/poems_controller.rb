@@ -1,16 +1,23 @@
 class PoemsController < ApplicationController
   before_action :set_poem, only: [:show, :update, :edit, :destroy]
 
-  # GET /poems
-  # GET /poems.json
+  # GET /poems => format.html
+  # GET /poems.json => format.json
   def index
     @poems = Poem.all
-    #render json: @poems
+    respond_to do |format|
+      format.html
+      format.json { render json: @poems }
+    end
   end
 
-  # GET /poems/1
-  # GET /poems/1.json
+  # GET /poems/1 => format.html
+  # GET /poems/1.json => format.json
   def show
+    respond_to do |format|
+      format.html
+      format.json { render json: @poem }
+    end
   end
 
   # GET /poems/new
